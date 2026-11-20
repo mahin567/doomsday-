@@ -13,6 +13,8 @@ import { useEffect, useMemo, useRef, useState } from "react";
 export interface TunnelImage {
     src: string;
     title: string;
+    /** Shown if `src` fails to load (for example the file is not added yet). */
+    fallback?: string;
 }
 
 const DEFAULT_IMAGES: TunnelImage[] = [
@@ -135,6 +137,12 @@ function TunnelCard({ card, progress, pointer, total, stage }: TunnelCardProps) 
                     src={card.item.src}
                     alt={card.item.title}
                     draggable={false}
+                    onError={(e) => {
+                        const img = e.currentTarget;
+                        if (card.item.fallback && !img.src.endsWith(card.item.fallback)) {
+                            img.src = card.item.fallback;
+                        }
+                    }}
                     className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent flex items-end p-4 sm:p-5">

@@ -1,15 +1,15 @@
 import type { TunnelImage } from "@/components/ui/perspective-tunnel-hero";
 
-// Files live in frontend/public/marvel/. They are title-only placeholders now.
-// To use your own photos: drop the files in that folder (same names, e.g.
-// iron-man.jpg) and change the extension below from .svg to .jpg.
+// Put your PNG photos in frontend/public/marvel/ with these exact names
+// (iron-man.png, the-first-avenger.png, ...). Any photo that is missing
+// falls back to a title-only placeholder (.svg) in the same folder.
 export const HERO_IMAGES: TunnelImage[] = [
-  { src: "/marvel/iron-man.svg", title: "Iron Man" },
-  { src: "/marvel/the-first-avenger.svg", title: "The First Avenger" },
-  { src: "/marvel/the-avengers.svg", title: "The Avengers" },
-  { src: "/marvel/civil-war.svg", title: "Civil War" },
-  { src: "/marvel/ragnarok.svg", title: "Thor: Ragnarok" },
-  { src: "/marvel/infinity-war.svg", title: "Infinity War" },
-  { src: "/marvel/endgame.svg", title: "Endgame" },
-  { src: "/marvel/doomsday.svg", title: "Doomsday" },
+  { src: "/marvel/iron-man.png", title: "Iron Man", fallback: "/marvel/iron-man.svg" },
+  { src: "/marvel/the-first-avenger.png", title: "The First Avenger", fallback: "/marvel/the-first-avenger.svg" },
+  { src: "/marvel/the-avengers.png", title: "The Avengers", fallback: "/marvel/the-avengers.svg" },
+  { src: "/marvel/civil-war.png", title: "Civil War", fallback: "/marvel/civil-war.svg" },
+  { src: "/marvel/ragnarok.png", title: "Thor: Ragnarok", fallback: "/marvel/ragnarok.svg" },
+  { src: "/marvel/infinity-war.png", title: "Infinity War", fallback: "/marvel/infinity-war.svg" },
+  { src: "/marvel/endgame.png", title: "Endgame", fallback: "/marvel/endgame.svg" },
+  { src: "/marvel/doomsday.png", title: "Doomsday", fallback: "/marvel/doomsday.svg" },
 ];
